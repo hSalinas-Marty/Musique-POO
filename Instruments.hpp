@@ -6,19 +6,17 @@
 
 using namespace std;
 
-class Instrument {
-private :
-
-};
-
-class Guitare : public Instrument {
-};
-
-class Piano : public Instrument {
-};
-
-class Xylophone : public Instrument {
-};
+//class Instrument {
+//};
+//
+//class Guitare : public Instrument {
+//};
+//
+//class Piano : public Instrument {
+//};
+//
+//class Xylophone : public Instrument {
+//};
 
 class Touch {
 private:
