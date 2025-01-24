@@ -1,4 +1,6 @@
 #include "Instruments.hpp"
+#include <fstream>
+
 
 void Touch::listenForKeyPress()
 {
@@ -39,4 +41,40 @@ void Touch::listenForKeyPress()
                 }
             }
         }
+}
+// Implémentation de Guitare
+void Guitare::affiche() const {
+    std::cout << "Vous avez choisi une guitare." << std::endl;
+}
+
+void Guitare::jouerNote(const std::string& note) const {
+    std::cout << "La guitare joue la note : " << note << std::endl;
+    ifstream starwars("C:\Users\vicky\Desktop\VictoriaB1\opp\Musique-POO");  //On essaye d'ouvrir le fichier
+
+    if (starwars)  //On teste si tout est OK
+    {
+        //Tout est OK, on peut utiliser le fichier
+    }
+    else
+    {
+        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
+    }
+}
+
+// Implémentation de Piano
+void Piano::affiche() const {
+    std::cout << "Vous avez choisi un piano." << std::endl;
+}
+
+void Piano::jouerNote(const std::string& note) const {
+    std::cout << "Le piano joue la note : " << note << std::endl;
+}
+
+// Implémentation de Xylophone
+void Xylophone::affiche() const {
+    std::cout << "Vous avez choisi un xylophone." << std::endl;
+}
+
+void Xylophone::jouerNote(const std::string& note) const {
+    std::cout << "Le xylophone joue la note : " << note << std::endl;
 }
