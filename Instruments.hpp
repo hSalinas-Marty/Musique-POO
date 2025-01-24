@@ -2,12 +2,16 @@
 #define INSTRUMENTS	
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 class Instrument {
 private:
-	[] string note;
+	[] string note = ["C", "D", "E"];
+public:
+	void Instrument();
+	void ~Instrument();
 
 
 };
