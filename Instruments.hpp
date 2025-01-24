@@ -3,20 +3,25 @@
 
 #include <iostream>
 #include <conio.h>
+#include <fstream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-//class Instrument {
-//};
-//
-//class Guitare : public Instrument {
-//};
-//
-//class Piano : public Instrument {
-//};
-//
-//class Xylophone : public Instrument {
-//};
+class Instrument {
+	string name;
+
+};
+
+class Guitare : public Instrument {
+};
+
+class Piano : public Instrument {
+};
+
+class Xylophone : public Instrument {
+};
 
 class Touch {
 private:
