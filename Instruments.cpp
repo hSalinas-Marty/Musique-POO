@@ -29,38 +29,34 @@ char getKeyPress() {
 }
 
 void Touch::listenForKeyPress() {
+    // Tableau des notes associées aux touches
+    char notes[] = {'d', 'r', 'm', 'f', 's', 'l', 'i'};
+    string names_notes[] = {"Do", "Ré", "Mi", "Fa", "Sol", "La", "Si"};
+    
     cout << "Appuyez sur une touche correspondant à une note musicale (d, r, m, f, s, l, i)." << endl;
     cout << "Appuyez sur 'q' pour quitter." << endl;
 
     while (true) {
+        // Attente d'une touche sans qu'elle ne soit répétée
         char key = getKeyPress();
-
-        switch (key) {
-        case 'd':
-            cout << "Note: " << note_do << endl;
-            break;
-        case 'r':
-            cout << "Note: " << note_re << endl;
-            break;
-        case 'm':
-            cout << "Note: " << note_mi << endl;
-            break;
-        case 'f':
-            cout << "Note: " << note_fa << endl;
-            break;
-        case 's':
-            cout << "Note: " << note_sol << endl;
-            break;
-        case 'l':
-            cout << "Note: " << note_la << endl;
-            break;
-        case 'i':
-            cout << "Note: " << note_si << endl;
-            break;
-        case 'q':
+        
+        // Vérifie si la touche pressée est 'q' pour quitter
+        if (key == 'q') {
             cout << "Fin du programme." << endl;
-            return;
-        default:
+            break;
+        }
+
+        // Cherche la touche dans le tableau et affiche la note correspondante
+        bool recognized = false;
+        for (int i = 0; i < sizeof(notes) / sizeof(notes[0]); i++) {
+            if (key == notes[i]) {
+                cout << "Note: " << names_notes[i] << endl;
+                recognized = true;
+                break;
+            }
+        }
+
+        if (!recognized) {
             cout << "Touche non reconnue." << endl;
         }
     }
