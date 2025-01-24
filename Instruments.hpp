@@ -1,37 +1,21 @@
-#ifndef INSTRUMENTS
-#define INSTRUMENTS
+#ifndef INSTRUMENTS_HPP
+#define INSTRUMENTS_HPP
 
 #include <iostream>
-#include <conio.h>
-
 using namespace std;
-
-//class Instrument {
-//};
-//
-//class Guitare : public Instrument {
-//};
-//
-//class Piano : public Instrument {
-//};
-//
-//class Xylophone : public Instrument {
-//};
 
 class Touch {
 private:
-	int vitesse;
-	string note_do;
-	string note_re;
-	string note_mi;
-	string note_fa;
-	string note_sol;
-	string note_la;
-	string note_si;
+    string note_do = "Do";
+    string note_re = "Ré";
+    string note_mi = "Mi";
+    string note_fa = "Fa";
+    string note_sol = "Sol";
+    string note_la = "La";
+    string note_si = "Si";
+    
 public:
-	void choirithme();
-	void listenForKeyPress();
-
+    void listenForKeyPress();
 };
 
-#endif
+#endif // INSTRUMENTS_HPP
