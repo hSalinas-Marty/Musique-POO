@@ -31,7 +31,6 @@ private:
 public:
 	void choirithme();
 	void listenForKeyPress();
-
 };
 
 #endif
