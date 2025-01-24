@@ -1,8 +1,14 @@
 #ifndef INSTRUMENTS
 #define INSTRUMENTS
 
-#include <iostream>
+#include <thread>
+#include <chrono>
 #include <conio.h>
+#include <iostream>
+#include <windows.h>
+#include <string>
+
+
 
 using namespace std;
 
@@ -11,6 +17,8 @@ private :
 	string instrument;
 public:
 	void chooseInstrument();
+	void makeSound();
+	string getInstrument() { return instrument; }
 };
 //
 //class Guitare : public Instrument {
@@ -24,7 +32,7 @@ public:
 
 class Touch {
 private:
-	int vitesse;
+	float vitesse;
 public:
 	void choirithme();
 	void listenForKeyPress();
