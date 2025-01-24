@@ -1,5 +1,27 @@
 #include "Instruments.hpp"
 
+void Touch::choirithme()
+{
+    int tempo;
+
+	cout << "Appuyez sur une touche correspondant à un rythme. \n1 = lent \n2 = normal \n3 = rapide" << endl;
+	cin >> tempo;
+
+	if (tempo == 1) {
+		vitesse = 1;
+	}
+	else if (tempo == 2) {
+		vitesse = 0,500;
+	}
+	else if (tempo == 3) {
+		vitesse = 0,250;
+	}
+	else {
+		cout << "Valeur incorrecte." << endl;
+	}
+}
+
+
 void Touch::listenForKeyPress()
 {
         cout << "Appuyez sur une touche correspondant à une note musicale (d, r, m, f, s, l, i)." << endl;

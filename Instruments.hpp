@@ -20,6 +20,7 @@ using namespace std;
 
 class Touch {
 private:
+	int vitesse;
 	string note_do;
 	string note_re;
 	string note_mi;
@@ -28,6 +29,7 @@ private:
 	string note_la;
 	string note_si;
 public:
+	void choirithme();
 	void listenForKeyPress();
 
 };
