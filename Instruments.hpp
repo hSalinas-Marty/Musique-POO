@@ -8,42 +8,35 @@ using namespace std;
 
 // Classe abstraite pour les instruments
 class Instrument {
+private:
+    float vitesse;
 public:
-      virtual ~Instrument() = default;
+      void chooseInstrument();
+      void choirithme();
+      void listenForKeyPress();
+      virtual ~Instrument();
+      void Lecture_partition(partition);
+
 };
 
 // Classe Guitare
 class Guitare : public Instrument {
 public:
-    void affiche() const override;
-    void jouerNote(const std::string& note) const override;
+    void son_guitare();
 };
 
 // Classe Piano
 class Piano : public Instrument {
 public:
-    void affiche() const override;
-    void jouerNote(const std::string& note) const override;
+
+    void son_piano();
 };
 
 // Classe Xylophone
 class Xylophone : public Instrument {
 public:
-    void affiche() const override;
-    void jouerNote(const std::string& note) const override;
-};
-class Touch {
-private:
-	string note_do;
-	string note_re;
-	string note_mi;
-	string note_fa;
-	string note_sol;
-	string note_la;
-	string note_si;
-public:
-	void listenForKeyPress();
 
+    void son_xylophone();
 };
 
 #endif

@@ -2,9 +2,52 @@
 #include <fstream>
 
 
-void Touch::listenForKeyPress()
-{
-        cout << "Appuyez sur une touche correspondant à une note musicale (d, r, m, f, s, l, i)." << endl;
+   void Instrument::chooseInstrument()
+    {
+        int choix;
+        cout << "Choisissez un instrument. \n1 = guitare \n2 = piano \n3 = xylophone" << endl;
+        cin >> choix;
+        if (choix == 1) {
+            cout << "Vous avez choisi la guitare." << endl;
+            instrument = "guitare";
+        }
+        else if (choix == 2) {
+            cout << "Vous avez choisi le piano." << endl;
+            instrument = "piano";
+        }
+        else if (choix == 3) {
+            cout << "Vous avez choisi le xylophone." << endl;
+            instrument = "xylophone";
+        }
+        else {
+            cout << "Valeur incorrecte." << endl;
+        }
+    }
+
+ void Instrument::choirithme()
+    {
+        int tempo;
+
+        cout << "Appuyez sur une touche correspondant à un rythme. \n1 = lent \n2 = normal \n3 = rapide" << endl;
+        cin >> tempo;
+
+        if (tempo == 1) {
+            vitesse = 1.50;
+        }
+        else if (tempo == 2) {
+            vitesse = 1.00;
+        }
+        else if (tempo == 3) {
+            vitesse = 0.50;
+        }
+        else {
+            cout << "Valeur incorrecte." << endl;
+        }
+    }
+
+    void Instrument::listenForKeyPress()
+    {
+        cout << "Appuyez sur une touche correspondant à une note musicale (c, d, e, f, g, a, b)." << endl;
         cout << "Appuyez sur 'q' pour quitter." << endl;
 
         while (true) {
@@ -12,26 +55,27 @@ void Touch::listenForKeyPress()
                 char key = _getch();
 
                 switch (key) {
+                case 'c':
+                    cout << "note_do " << vitesse << endl;
+
+                    break;
                 case 'd':
-                    cout << "note_do" << endl;
+                    cout << "note_re " << vitesse << endl;
+                    break;
+                case 'e':
+                    cout << "note_mi " << vitesse << endl;
                     break;
                 case 'f':
-                    cout << "note_re" << endl;
+                    cout << "note_fa " << vitesse << endl;
                     break;
                 case 'g':
-                    cout << "note_mi" << endl;
+                    cout << "note_sol " << vitesse << endl;
                     break;
-                case 'h':
-                    cout << "note_fa" << endl;
+                case 'a':
+                    cout << "note_la " << vitesse << endl;
                     break;
-                case 'j':
-                    cout << "note_sol" << endl;
-                    break;
-                case 'k':
-                    cout << "note_la" << endl;
-                    break;
-                case 'l':
-                    cout << "note_si" << endl;
+                case 'b':
+                    cout << "note_si " << vitesse << endl;
                     break;
                 case 'q':
                     cout << "Fin du programme." << endl;
@@ -41,40 +85,39 @@ void Touch::listenForKeyPress()
                 }
             }
         }
-}
-// Implémentation de Guitare
-void Guitare::affiche() const {
-    std::cout << "Vous avez choisi une guitare." << std::endl;
+    }
+
+Instrument::~Instrument()
+ {
+ }
+
+void Instrument::Lecture_partition(partition)
+{
 }
 
-void Guitare::jouerNote(const std::string& note) const {
-    std::cout << "La guitare joue la note : " << note << std::endl;
-    ifstream starwars("C:\Users\vicky\Desktop\VictoriaB1\opp\Musique-POO");  //On essaye d'ouvrir le fichier
 
-    if (starwars)  //On teste si tout est OK
-    {
-        //Tout est OK, on peut utiliser le fichier
-    }
-    else
-    {
-        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
-    }
+
+    
+    
+ // Implémentation de Guitare
+
+
+void Guitare::son_guitare()
+{
 }
+
 
 // Implémentation de Piano
-void Piano::affiche() const {
-    std::cout << "Vous avez choisi un piano." << std::endl;
+
+
+void Piano::son_piano()
+{
 }
 
-void Piano::jouerNote(const std::string& note) const {
-    std::cout << "Le piano joue la note : " << note << std::endl;
-}
 
 // Implémentation de Xylophone
-void Xylophone::affiche() const {
-    std::cout << "Vous avez choisi un xylophone." << std::endl;
-}
 
-void Xylophone::jouerNote(const std::string& note) const {
-    std::cout << "Le xylophone joue la note : " << note << std::endl;
+
+void Xylophone::son_xylophone()
+{
 }
