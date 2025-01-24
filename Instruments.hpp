@@ -6,8 +6,12 @@
 
 using namespace std;
 
-//class Instrument {
-//};
+class Instrument {
+private :
+	string instrument;
+public:
+	void chooseInstrument();
+};
 //
 //class Guitare : public Instrument {
 //};
@@ -21,13 +25,6 @@ using namespace std;
 class Touch {
 private:
 	int vitesse;
-	string note_do;
-	string note_re;
-	string note_mi;
-	string note_fa;
-	string note_sol;
-	string note_la;
-	string note_si;
 public:
 	void choirithme();
 	void listenForKeyPress();

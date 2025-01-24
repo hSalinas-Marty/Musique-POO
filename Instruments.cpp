@@ -1,5 +1,27 @@
 #include "Instruments.hpp"
 
+void Instrument::chooseInstrument()
+{
+    int choix;
+	cout << "Choisissez un instrument. \n1 = guitare \n2 = piano \n3 = xylophone" << endl;
+	cin >> choix;
+	if (choix == 1) {
+		cout << "Vous avez choisi la guitare." << endl;
+		instrument = "guitare";
+	}
+	else if (choix == 2) {
+		cout << "Vous avez choisi le piano." << endl;
+		instrument = "piano";
+	}
+	else if (choix == 3) {
+		cout << "Vous avez choisi le xylophone." << endl;
+		instrument = "xylophone";
+	}
+	else {
+		cout << "Valeur incorrecte." << endl;
+	}
+}
+
 void Touch::choirithme()
 {
     int tempo;
@@ -8,13 +30,13 @@ void Touch::choirithme()
 	cin >> tempo;
 
 	if (tempo == 1) {
-		vitesse = 1;
+		vitesse = "1,00";
 	}
 	else if (tempo == 2) {
-		vitesse = 0,500;
+		vitesse = "0,500";
 	}
 	else if (tempo == 3) {
-		vitesse = 0,250;
+		vitesse = "0,250";
 	}
 	else {
 		cout << "Valeur incorrecte." << endl;
@@ -62,4 +84,5 @@ void Touch::listenForKeyPress()
             }
         }
 }
+
 
