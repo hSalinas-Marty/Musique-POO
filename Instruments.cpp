@@ -11,25 +11,25 @@ void Touch::listenForKeyPress()
 
                 switch (key) {
                 case 'd':
-                    cout << note_do << endl;
+                    cout << "note_do" << endl;
                     break;
                 case 'f':
-                    cout << note_re << endl;
+                    cout << "note_re" << endl;
                     break;
                 case 'g':
-                    cout << note_mi << endl;
+                    cout << "note_mi" << endl;
                     break;
                 case 'h':
-                    cout << note_fa << endl;
+                    cout << "note_fa" << endl;
                     break;
                 case 'j':
-                    cout << note_sol << endl;
+                    cout << "note_sol" << endl;
                     break;
                 case 'k':
-                    cout << note_la << endl;
+                    cout << "note_la" << endl;
                     break;
                 case 'l':
-                    cout << note_si << endl;
+                    cout << "note_si" << endl;
                     break;
                 case 'q':
                     cout << "Fin du programme." << endl;
