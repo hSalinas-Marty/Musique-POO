@@ -39,12 +39,12 @@ public:
 
 };
 
-class Xilophone : public Instruments {
+class Xylophone : public Instruments {
 private:
 
 public:
-	Xilophone();
-	~Xilophone();
+	Xylophone();
+	~Xylophone();
 
 };
 

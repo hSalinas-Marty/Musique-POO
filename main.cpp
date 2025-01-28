@@ -10,8 +10,8 @@ int main() {
 			guitare.ListenForKeyPress();
 		}
 		if (instrument.get_instru() == 2) {
-			Xilophone xilophone;
-			xilophone.ListenForKeyPress();
+			Xylophone xylophone;
+			xylophone.ListenForKeyPress();
 		}
 		if (instrument.get_instru() == 3) {
 			Piano piano;
@@ -27,8 +27,8 @@ int main() {
 				guitare.choix_vitesse();
 			}
 			if (instrument.get_instru() == 2) {
-				Xilophone xilophone;
-				xilophone.choix_vitesse();
+				Xylophone xylophone;
+				xylophone.choix_vitesse();
 			}
 			if (instrument.get_instru() == 3) {
 				Piano piano;
@@ -41,8 +41,8 @@ int main() {
 				guitare.choix_vitesse();
 			}
 			if (instrument.get_instru() == 2) {
-				Xilophone xilophone;
-				xilophone.choix_vitesse();
+				Xylophone xylophone;
+				xylophone.choix_vitesse();
 			}
 			if (instrument.get_instru() == 3) {
 				Piano piano;

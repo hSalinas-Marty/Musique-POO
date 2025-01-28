@@ -136,11 +136,11 @@ void Guitare::play_guitare()
 {
 }
 
-Xilophone::Xilophone()
+Xylophone::Xylophone()
 {
 }
 
-Xilophone::~Xilophone()
+Xylophone::~Xylophone()
 {
 }
 
