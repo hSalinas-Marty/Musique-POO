@@ -93,25 +93,40 @@ void Instruments::ListenForKeyPress()
 		if (_kbhit()) {
 			char key = _getch();
 			switch (key) {
-			case 'c':
+			case 's':
 				cout << "DO" << endl;
+				break;
+			case 'e':
+				cout << "DO#" << endl;
 				break;
 			case 'd':
 				cout << "RE" << endl;
 				break;
-			case 'e':
-				cout << "MI" << endl;
+			case 'r':
+				cout << "RE#" << endl;
 				break;
 			case 'f':
-				cout << "FA" << endl;
+				cout << "MI" << endl;
 				break;
 			case 'g':
+				cout << "FA" << endl;
+				break;
+			case 'y':
+				cout << "FA#" << endl;
+				break;
+			case 'h':
 				cout << "SOL" << endl;
 				break;
-			case 'a':
+			case 'u':
+				cout << "SOL#" << endl;
+				break;
+			case 'j':
 				cout << "LA" << endl;
 				break;
-			case 'b':
+			case 'i':
+				cout << "LA#" << endl;
+				break;
+			case 'k':
 				cout << "SI" << endl;
 				break;
 			case 'q':
@@ -157,8 +172,8 @@ void Instruments::get_active()
 			guitare.ListenForKeyPress();
 		}
 		if (get_instru() == 2) {
-			Xylophone xilophone;
-			xilophone.ListenForKeyPress();
+			Xylophone xylophone;
+			xylophone.ListenForKeyPress();
 		}
 		if (get_instru() == 3) {
 			Piano piano;
@@ -175,9 +190,9 @@ void Instruments::get_active()
 				guitare.EcoutePartition();
 			}
 			if (get_instru() == 2) {
-				Xylophone xilophone;
-				xilophone.choix_vitesse();
-				xilophone.EcoutePartition();
+				Xylophone xylophone;
+				xylophone.choix_vitesse();
+				xylophone.EcoutePartition();
 			}
 			if (get_instru() == 3) {
 				Piano piano;
@@ -193,9 +208,9 @@ void Instruments::get_active()
 				guitare.EcoutePartition();
 			}
 			if (get_instru() == 2) {
-				Xylophone xilophone;
-				xilophone.choix_vitesse();
-				xilophone.EcoutePartition();
+				Xylophone xylophone;
+				xylophone.choix_vitesse();
+				xylophone.EcoutePartition();
 			}
 			if (get_instru() == 3) {
 				Piano piano;
