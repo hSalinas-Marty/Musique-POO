@@ -3,19 +3,21 @@
 
 #include <iostream>
 #include <conio.h>
+#include <string>
 
 using namespace std;
 
 // Classe abstraite pour les instruments
 class Instrument {
 private:
+    int choix_instrument;
     float vitesse;
 public:
-      void chooseInstrument();
-      void choirithme();
+      void chooseInstrument(int choix_instrument);
+      void choixrythme();
       void listenForKeyPress();
       virtual ~Instrument();
-      void Lecture_partition(partition);
+      void Lecture_partition(string partition);
 
 };
 

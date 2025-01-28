@@ -3,12 +3,11 @@
 int main() {
  
 
-    Touch touch;
-
-    touch.listenForKeyPress();
-
+  
     Instrument instrument;
-    instrument.chooseInstrument
+    instrument.listenForKeyPress();
+
+    instrument.chooseInstrument();
     return 0;
 
 }
