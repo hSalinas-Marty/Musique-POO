@@ -1,41 +1,68 @@
-#ifndef INSTRUMENTS
-#define INSTRUMENTS
+#ifndef INSTRUMENT
+#define INSTRUMENT
 
-#include <thread>
-#include <chrono>
-#include <conio.h>
 #include <iostream>
-#include <windows.h>
 #include <string>
-
-
+#include <vector>
+#include <conio.h>
+#include <fstream>
 
 using namespace std;
 
-class Instrument {
-private :
-	string instrument;
-public:
-	void chooseInstrument();
-	void makeSound();
-	string getInstrument() { return instrument; }
-};
-//
-//class Guitare : public Instrument {
-//};
-//
-//class Piano : public Instrument {
-//};
-//
-//class Xylophone : public Instrument {
-//};
-
-class Touch {
+class Instruments {
 private:
+	string Nom;
 	float vitesse;
+	int instru;
+	int partition;
+	int activite;
 public:
-	void choirithme();
-	void listenForKeyPress();
+	~Instruments();
+	void choix_instrument();
+	void choix_activite();
+	void choix_partition();
+	void choix_vitesse();
+	string get_name();
+	int get_activite();
+	int get_instru();
+	int get_partition();
+	void ListenForKeyPress();
 };
+
+class Guitare : public Instruments {
+private:
+
+public:
+	Guitare();
+	~Guitare();
+	void play_guitare();
+
+};
+
+class Xilophone : public Instruments {
+private:
+
+public:
+	Xilophone();
+	~Xilophone();
+
+};
+
+class Piano : public Instruments {
+private:
+
+public:
+	Piano();
+	~Piano();
+};
+
+
+
+
+
+
+
+
+
 
 #endif
