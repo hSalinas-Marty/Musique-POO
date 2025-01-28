@@ -180,12 +180,14 @@ void Instruments::sdl()
 {  
 	if (SDL_Init(SDL_INIT_AUDIO) < 0) {
 		std::cerr << "Erreur lors de l'initialisation de SDL: " << SDL_GetError() << std::endl;
+		return; // Ajout d'un retour en cas d'erreur
 	}
 
 	// Initialisation de SDL_mixer
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
 		std::cerr << "Erreur lors de l'initialisation de SDL_mixer: " << Mix_GetError() << std::endl;
 		SDL_Quit();
+		return; // Ajout d'un retour en cas d'erreur
 	}
 
 	// Charger un fichier audio (remplacez "son.wav" par le chemin de votre fichier)
@@ -194,6 +196,7 @@ void Instruments::sdl()
 		std::cerr << "Erreur lors du chargement du son: " << Mix_GetError() << std::endl;
 		Mix_CloseAudio();
 		SDL_Quit();
+		return; // Ajout d'un retour en cas d'erreur
 	}
 
 	// Jouer le son
@@ -202,6 +205,7 @@ void Instruments::sdl()
 		Mix_FreeChunk(sound);
 		Mix_CloseAudio();
 		SDL_Quit();
+		return; // Ajout d'un retour en cas d'erreur
 	}
 
 	std::cout << "Appuyez sur une touche pour quitter..." << std::endl;
