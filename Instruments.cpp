@@ -159,6 +159,7 @@ void Instruments::get_active()
 			}
 		}
 		else {
+			choix_instrument();
 			if (get_instru() == 1) {
 				Guitare guitare;
 				guitare.choix_vitesse();
