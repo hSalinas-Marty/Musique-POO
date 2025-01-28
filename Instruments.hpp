@@ -27,6 +27,7 @@ public:
 	int get_instru();
 	int get_partition();
 	void ListenForKeyPress();
+	void get_active();
 };
 
 class Guitare : public Instruments {
