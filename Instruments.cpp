@@ -177,7 +177,7 @@ void Instruments::get_active()
 }
 
 void Instruments::sdl()
-{
+{  
 	if (SDL_Init(SDL_INIT_AUDIO) < 0) {
 		std::cerr << "Erreur lors de l'initialisation de SDL: " << SDL_GetError() << std::endl;
 	}
