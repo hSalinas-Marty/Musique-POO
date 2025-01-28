@@ -6,6 +6,8 @@
 #include <vector>
 #include <conio.h>
 #include <fstream>
+#include "SDL.h"
+#include "SDL_mixer.h"
 
 using namespace std;
 
@@ -28,6 +30,8 @@ public:
 	int get_partition();
 	void ListenForKeyPress();
 	void get_active();
+
+	void sdl();
 };
 
 class Guitare : public Instruments {

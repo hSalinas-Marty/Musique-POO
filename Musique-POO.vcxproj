@@ -70,6 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\TeddyS\Desktop\projet\libs\SDL2_mixer-devel-2.8.0-VC\SDL2_mixer-2.8.0\include;C:\Users\TeddyS\Desktop\projet\libs\SDL2-devel-2.30.11-VC\SDL2-2.30.11\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\TeddyS\Desktop\projet\libs\SDL2_mixer-devel-2.8.0-VC\SDL2_mixer-2.8.0\lib;C:\Users\TeddyS\Desktop\projet\libs\SDL2-devel-2.30.11-VC\SDL2-2.30.11\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -108,7 +112,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(CoreLibraryDependencies);SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\TeddyS\Desktop\projet\libs\SDL2_mixer-devel-2.8.0-VC\SDL2_mixer-2.8.0\lib\x64</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,6 +141,10 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\Downloads\metallophone.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SDL2.dll" />
+    <None Include="SDL2_mixer.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

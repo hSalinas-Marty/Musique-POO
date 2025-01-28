@@ -176,6 +176,54 @@ void Instruments::get_active()
 	}
 }
 
+void Instruments::sdl()
+{
+	if (SDL_Init(SDL_INIT_AUDIO) < 0) {
+		std::cerr << "Erreur lors de l'initialisation de SDL: " << SDL_GetError() << std::endl;
+	}
+
+	// Initialisation de SDL_mixer
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+		std::cerr << "Erreur lors de l'initialisation de SDL_mixer: " << Mix_GetError() << std::endl;
+		SDL_Quit();
+	}
+
+	// Charger un fichier audio (remplacez "son.wav" par le chemin de votre fichier)
+	Mix_Chunk* sound = Mix_LoadWAV("metallophone.wav");
+	if (!sound) {
+		std::cerr << "Erreur lors du chargement du son: " << Mix_GetError() << std::endl;
+		Mix_CloseAudio();
+		SDL_Quit();
+	}
+
+	// Jouer le son
+	if (Mix_PlayChannel(-1, sound, 0) == -1) {
+		std::cerr << "Erreur lors de la lecture du son: " << Mix_GetError() << std::endl;
+		Mix_FreeChunk(sound);
+		Mix_CloseAudio();
+		SDL_Quit();
+	}
+
+	std::cout << "Appuyez sur une touche pour quitter..." << std::endl;
+
+	// Attendre un événement (par exemple, la fermeture de la fenêtre ou une touche)
+	SDL_Event event;
+	bool running = true;
+	while (running) {
+		while (SDL_PollEvent(&event)) {
+			if (event.type == SDL_QUIT || event.type == SDL_KEYDOWN) {
+				running = false;
+			}
+		}
+		SDL_Delay(100); // Réduction de l'utilisation CPU
+	}
+
+	// Nettoyer les ressources
+	Mix_FreeChunk(sound);
+	Mix_CloseAudio();
+	SDL_Quit();
+}
+
 
 Guitare::Guitare()
 {
@@ -204,3 +252,5 @@ Piano::Piano()
 Piano::~Piano()
 {
 }
+
+
