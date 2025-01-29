@@ -6,6 +6,8 @@
 #include <vector>
 #include <conio.h>
 #include <fstream>
+#include <sstream>
+#include <map>
 
 using namespace std;
 
@@ -27,6 +29,7 @@ public:
 	int get_instru();
 	int get_partition();
 	void ListenForKeyPress();
+	void get_active();
 };
 
 class Guitare : public Instruments {
@@ -55,14 +58,6 @@ public:
 	Piano();
 	~Piano();
 };
-
-
-
-
-
-
-
-
 
 
 #endif

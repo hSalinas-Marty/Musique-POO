@@ -1,55 +1,27 @@
 #include "Instruments.hpp"
+#include "Partitions.hpp"
 
 int main() {
 	Instruments instrument;
 	instrument.choix_activite();
-	if (instrument.get_activite() == 1) {
-		instrument.choix_instrument();
-		if (instrument.get_instru() == 1) {
-			Guitare guitare;
-			guitare.ListenForKeyPress();
-		}
-		if (instrument.get_instru() == 2) {
-			Xylophone xylophone;
-			xylophone.ListenForKeyPress();
-		}
-		if (instrument.get_instru() == 3) {
-			Piano piano;
-			piano.ListenForKeyPress();
-		}
-	}
-	else {
-		instrument.choix_partition();
-		if (instrument.get_partition() == 1) {
-			instrument.choix_instrument();
-			if (instrument.get_instru() == 1) {
-				Guitare guitare;
-				guitare.choix_vitesse();
-			}
-			if (instrument.get_instru() == 2) {
-				Xylophone xylophone;
-				xylophone.choix_vitesse();
-			}
-			if (instrument.get_instru() == 3) {
-				Piano piano;
-				piano.choix_vitesse();
-			}
-		}
-		else {
-			if (instrument.get_instru() == 1) {
-				Guitare guitare;
-				guitare.choix_vitesse();
-			}
-			if (instrument.get_instru() == 2) {
-				Xylophone xylophone;
-				xylophone.choix_vitesse();
-			}
-			if (instrument.get_instru() == 3) {
-				Piano piano;
-				piano.choix_vitesse();
-			}
-		}
-	}
+	instrument.get_active();
+	//Lis la partition 
+	
+    Partitions partition; // Création d'un objet de la classe Partitions
 
+    cout << "Lecture des notes depuis le fichier...\n" << endl;
+    partition.EcoutePartition(); // Appel de la fonction pour lire et afficher les notes
+
+    // Test de Extrait_note() individuellement
+    string note_test = "A4";
+    float frequence = partition.Extrait_note(note_test);
+
+    if (frequence > 0) {
+        cout << "La fréquence de " << note_test << " est : " << frequence << " Hz" << endl;
+    }
+    else {
+        cout << "Note inconnue !" << endl;
+    }
+	
 	return 0;
 }

@@ -1,5 +1,5 @@
 #include "Instruments.hpp"
-
+#include "fstream"
 
 Instruments::~Instruments()
 {
@@ -124,6 +124,61 @@ void Instruments::ListenForKeyPress()
 	}
 }
 
+void Instruments::get_active()
+{
+	if (get_activite() == 1) {
+		choix_instrument();
+		if (get_instru() == 1) {
+			Guitare guitare;
+			guitare.ListenForKeyPress();
+		}
+		if (get_instru() == 2) {
+			Xylophone xylophone;
+			xylophone.ListenForKeyPress();
+		}
+		if (get_instru() == 3) {
+			Piano piano;
+			piano.ListenForKeyPress();
+		}
+	}
+	else {
+		choix_partition();
+		if (get_partition() == 1) {
+			choix_instrument();
+			if (get_instru() == 1) {
+				Guitare guitare;
+				guitare.choix_vitesse();
+			}
+			if (get_instru() == 2) {
+				Xylophone xylophone;
+				xylophone.choix_vitesse();
+			}
+			if (get_instru() == 3) {
+				Piano piano;
+				piano.choix_vitesse();
+			}
+		}
+		else {
+			choix_instrument();
+			if (get_instru() == 1) {
+				Guitare guitare;
+				guitare.choix_vitesse();
+			}
+			if (get_instru() == 2) {
+				Xylophone xylophone;
+				xylophone.choix_vitesse();
+			}
+			if (get_instru() == 3) {
+				Piano piano;
+				piano.choix_vitesse();
+			}
+		}
+	}
+}
+
+
+
+
 Guitare::Guitare()
 {
 }
@@ -151,3 +206,5 @@ Piano::Piano()
 Piano::~Piano()
 {
 }
+
+
