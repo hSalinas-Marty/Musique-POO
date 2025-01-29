@@ -1,5 +1,6 @@
 #include "Instruments.hpp"
-
+#include "fstream"
+#include "Partitions.hpp"
 
 Instruments::~Instruments()
 {
@@ -139,29 +140,6 @@ void Instruments::ListenForKeyPress()
 	}
 }
 
-void Instruments::EcoutePartition()
-{
-	ifstream monFlux("C:/Users/hugos/Documents/Ynov/POO/test-POO/Partitions/star_wars.txt");
-	if (monFlux) {
-		string ligne;
-		while (getline(monFlux, ligne)) {
-			istringstream fluxLigne(ligne);
-			string note;
-			double duree;
-
-			// Lecture de la note et de la durée
-			if (fluxLigne >> note >> duree) {
-
-			}
-			else {
-				cout << "Ligne mal formatee ou vide : " << ligne << endl;
-			}
-		}
-	}
-	else {
-		cout << "Erreur : impossible d'ouvrir le fichier en lecture" << endl;
-	}
-}
 
 void Instruments::get_active()
 {
@@ -187,17 +165,19 @@ void Instruments::get_active()
 			if (get_instru() == 1) {
 				Guitare guitare;
 				guitare.choix_vitesse();
-				guitare.EcoutePartition();
+				Partitions partition;
+				partition.EcoutePartition();
+				
 			}
 			if (get_instru() == 2) {
 				Xylophone xylophone;
 				xylophone.choix_vitesse();
-				xylophone.EcoutePartition();
+				
 			}
 			if (get_instru() == 3) {
 				Piano piano;
 				piano.choix_vitesse();
-				piano.EcoutePartition();
+				
 			}
 		}
 		else {
@@ -205,21 +185,23 @@ void Instruments::get_active()
 			if (get_instru() == 1) {
 				Guitare guitare;
 				guitare.choix_vitesse();
-				guitare.EcoutePartition();
+			
 			}
 			if (get_instru() == 2) {
 				Xylophone xylophone;
 				xylophone.choix_vitesse();
-				xylophone.EcoutePartition();
+				
 			}
 			if (get_instru() == 3) {
 				Piano piano;
 				piano.choix_vitesse();
-				piano.EcoutePartition();
+				
 			}
 		}
 	}
 }
+
+
 
 
 Guitare::Guitare()
@@ -249,3 +231,5 @@ Piano::Piano()
 Piano::~Piano()
 {
 }
+
+

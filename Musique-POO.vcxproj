@@ -130,12 +130,17 @@
   <ItemGroup>
     <ClCompile Include="Instruments.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="partitions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Instruments.hpp" />
+    <ClInclude Include="Partitions.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\Downloads\metallophone.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="starwars.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

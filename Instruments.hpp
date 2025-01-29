@@ -29,7 +29,6 @@ public:
 	int get_partition();
 	void ListenForKeyPress();
 	void get_active();
-	void EcoutePartition();
 };
 
 class Guitare : public Instruments {
@@ -58,14 +57,6 @@ public:
 	Piano();
 	~Piano();
 };
-
-
-
-
-
-
-
-
 
 
 #endif
