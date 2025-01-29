@@ -14,7 +14,7 @@ using namespace std;
 class Instruments {
 private:
 	string Nom;
-	float vitesse;
+	float vitesse = 1;
 	int instru;
 	int partition;
 	int activite;
@@ -23,14 +23,14 @@ public:
 	void choix_instrument();
 	void choix_activite();
 	void choix_partition();
-	void choix_vitesse();
+	float choix_vitesse();
 	string get_name();
 	int get_activite();
 	int get_instru();
 	int get_partition();
 	void ListenForKeyPress();
 	void get_active();
-	void EcoutePartition();
+	float get_vitesse();
 };
 
 class Guitare : public Instruments {
@@ -59,14 +59,6 @@ public:
 	Piano();
 	~Piano();
 };
-
-
-
-
-
-
-
-
 
 
 #endif
