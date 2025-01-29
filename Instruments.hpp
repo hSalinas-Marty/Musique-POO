@@ -7,6 +7,7 @@
 #include <conio.h>
 #include <fstream>
 #include <sstream>
+#include <map>
 
 using namespace std;
 
