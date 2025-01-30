@@ -8,7 +8,6 @@ int Affichage_utilisateur::get_partition()
 
 int Affichage_utilisateur::get_activite()
 {
-	cout << activite;
 	return activite;
 }
 
@@ -83,22 +82,16 @@ void Affichage_utilisateur::get_active()
 			string texte;
 			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/star_wars.txt";
 			if (instruments.get_instru() == 1) {
-				//Guitare guitare;
-				//guitare.choix_vitesse();
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
 			}
 			if (instruments.get_instru() == 2) {
-				//Xylophone xylophone;
-				//xylophone.choix_vitesse();
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
 			}
 			if (instruments.get_instru() == 3) {
-				//Piano piano;
-				//piano.choix_vitesse();
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
@@ -109,20 +102,14 @@ void Affichage_utilisateur::get_active()
 			string texte;
 			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/mario.txt";
 			if (instruments.get_instru() == 1) {
-				//Guitare guitare;
-				//guitare.choix_vitesse();
 				Partitions partition;
 				partition.EcoutePartition(texte);
 			}
 			if (instruments.get_instru() == 2) {
-				//Xylophone xylophone;
-				//xylophone.choix_vitesse();
 				Partitions partition;
 				partition.EcoutePartition(texte);
 			}
 			if (instruments.get_instru() == 3) {
-				//Piano piano;
-				//piano.choix_vitesse();
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
