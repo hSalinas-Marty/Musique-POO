@@ -12,33 +12,6 @@ string Instruments::get_name()
 	return Nom;
 }
 
-void Instruments::choix_instrument()
-{
-	int choix;
-	cout << "Veillez selectionner un instrument : \n1 = guitare \n2 = piano \n3 = xylophone" << endl;
-	cin >> choix;
-	if (choix == 1) {
-		cout << "Vous avez choisi la guitare." << endl;
-		instru = choix;
-	}
-	else if (choix == 2) {
-		cout << "Vous avez choisi le xylophone." << endl;
-		instru = choix;
-	}
-	else if (choix == 3) {
-		cout << "Vous avez choisi le piano." << endl;
-		instru = choix;
-	}
-	else {
-		cout << "Valeur incorrecte." << endl;
-	}
-}
-
-int Instruments::get_instru()
-{
-	return instru;
-}
-
 void Instruments::ListenForKeyPress()
 {
 	cout << " appuyez sur une des touches suivantes (s, e, d, r, f, g, y, h, u, j, i, k)." << endl;

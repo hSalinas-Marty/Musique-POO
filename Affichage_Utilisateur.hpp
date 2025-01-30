@@ -9,6 +9,7 @@ private:
     float vitesse = 1;
     int partition;
     int activite;
+    int instru;
 public:
     void choix_partition();
     void choix_activite();
@@ -17,6 +18,8 @@ public:
     int get_partition();
     int get_activite();
     void get_active();
+    int get_instru();
+    void choix_instrument();
 };
 
 #endif 

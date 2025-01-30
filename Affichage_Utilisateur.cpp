@@ -60,14 +60,14 @@ void Affichage_utilisateur::get_active()
 {
 	shared_ptr<Instruments> instruments;
 	if (get_activite() == 1) {
-		instruments->choix_instrument();
-		if (instruments->get_instru() == 1) {
+		choix_instrument();
+		if (get_instru() == 1) {
 			instruments = make_shared<Guitare>();
 		}
-		if (instruments->get_instru() == 2) {
+		if (get_instru() == 2) {
 			instruments = make_shared<Piano>();
 		}
-		if (instruments->get_instru() == 3) {
+		if (get_instru() == 3) {
 			instruments = make_shared<Xylophone>();
 			
 		}
@@ -76,43 +76,70 @@ void Affichage_utilisateur::get_active()
 	else {
 		choix_partition();
 		if (get_partition() == 1) {
-			instruments->choix_instrument();
+			choix_instrument();
 			
 			string texte;
 			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/star_wars.txt";
-			if (instruments->get_instru() == 1) {
+			if (get_instru() == 1) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
 			}
-			if (instruments->get_instru() == 2) {
+			if (get_instru() == 2) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
 			}
-			if (instruments->get_instru() == 3) {
+			if (get_instru() == 3) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
 			}
 		}
 		else {
-			instruments->choix_instrument();
+			choix_instrument();
 			string texte;
 			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/mario.txt";
-			if (instruments->get_instru() == 1) {
+			if (get_instru() == 1) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 			}
-			if (instruments->get_instru() == 2) {
+			if (get_instru() == 2) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 			}
-			if (instruments->get_instru() == 3) {
+			if (get_instru() == 3) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
 			}
 		}
 	}
+}
+
+void Affichage_utilisateur::choix_instrument()
+{
+	int choix;
+	cout << "Veillez selectionner un instrument : \n1 = guitare \n2 = piano \n3 = xylophone" << endl;
+	cin >> choix;
+	if (choix == 1) {
+		cout << "Vous avez choisi la guitare." << endl;
+		instru = choix;
+	}
+	else if (choix == 2) {
+		cout << "Vous avez choisi le piano." << endl;
+		instru = choix;
+	}
+	else if (choix == 3) {
+		cout << "Vous avez choisi le xylophone." << endl;
+		instru = choix;
+	}
+	else {
+		cout << "Valeur incorrecte." << endl;
+	}
+}
+
+int Affichage_utilisateur::get_instru()
+{
+	return instru;
 }

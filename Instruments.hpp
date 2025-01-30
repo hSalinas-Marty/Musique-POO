@@ -14,12 +14,9 @@ using namespace std;
 class Instruments {
 private:
 	string Nom;
-	int instru;
 public:
 	~Instruments();
-	void choix_instrument();
 	string get_name();
-	int get_instru();
 	virtual void ListenForKeyPress();
 	
 };
@@ -33,6 +30,16 @@ public:
 	~Guitare();
 };
 
+class Piano : public Instruments {
+private:
+
+public:
+	Piano();
+	void ListenForKeyPress() override;
+	~Piano();
+};
+
+
 class Xylophone : public Instruments {
 private:
 
@@ -41,15 +48,6 @@ public:
 	void ListenForKeyPress() override;
 	~Xylophone();
 
-};
-
-class Piano : public Instruments {
-private:
-
-public:
-	Piano();
-	void ListenForKeyPress() override;
-	~Piano();
 };
 
 
