@@ -58,58 +58,57 @@ float Affichage_utilisateur::get_vitesse()
 
 void Affichage_utilisateur::get_active()
 {
-	Instruments instruments;
+	shared_ptr<Instruments> instruments;
 	if (get_activite() == 1) {
-		instruments.choix_instrument();
-		if (instruments.get_instru() == 1) {
-			Guitare guitare;
-			guitare.ListenForKeyPress();
+		instruments->choix_instrument();
+		if (instruments->get_instru() == 1) {
+			instruments = make_shared<Guitare>();
 		}
-		if (instruments.get_instru() == 2) {
-			Xylophone xylophone;
-			xylophone.ListenForKeyPress();
+		if (instruments->get_instru() == 2) {
+			instruments = make_shared<Piano>();
 		}
-		if (instruments.get_instru() == 3) {
-			Piano piano;
-			piano.ListenForKeyPress();
+		if (instruments->get_instru() == 3) {
+			instruments = make_shared<Xylophone>();
+			
 		}
+		instruments->ListenForKeyPress();
 	}
 	else {
 		choix_partition();
 		if (get_partition() == 1) {
-			instruments.choix_instrument();
+			instruments->choix_instrument();
 			
 			string texte;
 			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/star_wars.txt";
-			if (instruments.get_instru() == 1) {
+			if (instruments->get_instru() == 1) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
 			}
-			if (instruments.get_instru() == 2) {
+			if (instruments->get_instru() == 2) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
 			}
-			if (instruments.get_instru() == 3) {
+			if (instruments->get_instru() == 3) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 
 			}
 		}
 		else {
-			instruments.choix_instrument();
+			instruments->choix_instrument();
 			string texte;
 			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/mario.txt";
-			if (instruments.get_instru() == 1) {
+			if (instruments->get_instru() == 1) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 			}
-			if (instruments.get_instru() == 2) {
+			if (instruments->get_instru() == 2) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 			}
-			if (instruments.get_instru() == 3) {
+			if (instruments->get_instru() == 3) {
 				Partitions partition;
 				partition.EcoutePartition(texte);
 

@@ -22,11 +22,11 @@ void Instruments::choix_instrument()
 		instru = choix;
 	}
 	else if (choix == 2) {
-		cout << "Vous avez choisi le piano." << endl;
+		cout << "Vous avez choisi le xylophone." << endl;
 		instru = choix;
 	}
 	else if (choix == 3) {
-		cout << "Vous avez choisi le xylophone." << endl;
+		cout << "Vous avez choisi le piano." << endl;
 		instru = choix;
 	}
 	else {
@@ -41,7 +41,7 @@ int Instruments::get_instru()
 
 void Instruments::ListenForKeyPress()
 {
-	cout << "Appuyez sur une touche correspondant à une note musicale (s, e, d, r, f, g, y, h, u, j, i, k)." << endl;
+	cout << " appuyez sur une des touches suivantes (s, e, d, r, f, g, y, h, u, j, i, k)." << endl;
 	cout << "Appuyez sur 'q' pour quitter." << endl;
 
 	while (true) {
@@ -103,23 +103,49 @@ Guitare::Guitare()
 {
 }
 
+void Guitare::ListenForKeyPress()
+{
+
+	cout << " Note a la guitare :";
+	Instruments::ListenForKeyPress();
+	cout << endl;
+}
+
 Guitare::~Guitare()
 {
 }
+
+
+Piano::Piano()
+{
+}
+
+void Piano::ListenForKeyPress()
+{
+	
+	cout << " Note au Piano :";
+	Instruments::ListenForKeyPress();
+	cout << endl;
+}
+
+Piano::~Piano()
+{
+}
+
 Xylophone::Xylophone()
 {
+}
+
+void Xylophone::ListenForKeyPress()
+{
+	cout << " Note au Xylophone :";
+	Instruments::ListenForKeyPress();
+	cout << endl;
 }
 
 Xylophone::~Xylophone()
 {
 }
 
-Piano::Piano()
-{
-}
-
-Piano::~Piano()
-{
-}
 
 

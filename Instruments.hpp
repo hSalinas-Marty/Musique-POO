@@ -20,7 +20,7 @@ public:
 	void choix_instrument();
 	string get_name();
 	int get_instru();
-	void ListenForKeyPress();
+	virtual void ListenForKeyPress();
 	
 };
 
@@ -29,6 +29,7 @@ private:
 
 public:
 	Guitare();
+	void ListenForKeyPress() override;
 	~Guitare();
 };
 
@@ -37,6 +38,7 @@ private:
 
 public:
 	Xylophone();
+	void ListenForKeyPress() override;
 	~Xylophone();
 
 };
@@ -46,6 +48,7 @@ private:
 
 public:
 	Piano();
+	void ListenForKeyPress() override;
 	~Piano();
 };
 
