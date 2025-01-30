@@ -15,7 +15,7 @@ using namespace std;
 
 class Partitions {
 public:
-	void EcoutePartition();
+	void EcoutePartition(string url);
 	float  Extrait_note(string nom_note);
 };
 

@@ -38,7 +38,7 @@ void Instruments::choix_activite()
 
 void Instruments::choix_partition()
 {
-	int choix;
+	int choix = 0;
 	cout << "Quelle musique voulez-vous ecouter ? \n1 = Star Wars \n2 = Mario" << endl;
 	cin >> choix;
 	partition = choix;
@@ -165,39 +165,53 @@ void Instruments::get_active()
 		choix_partition();
 		if (get_partition() == 1) {
 			choix_instrument();
+			Instruments instruments;
+			string texte;
+			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/star_wars.txt";
 			if (get_instru() == 1) {
-				Guitare guitare;
-				guitare.choix_vitesse();
+				//Guitare guitare;
+				//guitare.choix_vitesse();
 				Partitions partition;
-				partition.EcoutePartition();
+				partition.EcoutePartition(texte);
 				
 			}
 			if (get_instru() == 2) {
-				Xylophone xylophone;
-				xylophone.choix_vitesse();
+				//Xylophone xylophone;
+				//xylophone.choix_vitesse();
+				Partitions partition;
+				partition.EcoutePartition(texte);
 				
 			}
 			if (get_instru() == 3) {
-				Piano piano;
-				piano.choix_vitesse();
+				//Piano piano;
+				//piano.choix_vitesse();
+				Partitions partition;
+				partition.EcoutePartition(texte);
 				
 			}
 		}
 		else {
 			choix_instrument();
+			Instruments instruments;
+			string texte;
+			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/mario.txt";
 			if (get_instru() == 1) {
-				Guitare guitare;
-				guitare.choix_vitesse();
-			
+				//Guitare guitare;
+				//guitare.choix_vitesse();
+				Partitions partition;
+				partition.EcoutePartition(texte);
 			}
 			if (get_instru() == 2) {
-				Xylophone xylophone;
-				xylophone.choix_vitesse();
-				
+				//Xylophone xylophone;
+				//xylophone.choix_vitesse();
+				Partitions partition;
+				partition.EcoutePartition(texte);
 			}
 			if (get_instru() == 3) {
-				Piano piano;
-				piano.choix_vitesse();
+				//Piano piano;
+				//piano.choix_vitesse();
+				Partitions partition;
+				partition.EcoutePartition(texte);
 				
 			}
 		}

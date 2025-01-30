@@ -2,13 +2,14 @@
 #include "Instruments.hpp"
 
 
-void Partitions::EcoutePartition()
+void Partitions::EcoutePartition(string url)
 {
-	ifstream monFlux("C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/star_wars.txt");
+	Instruments instruments;
+	ifstream monFlux(url);
 	if (monFlux) {
 		string ligne;
-		Instruments instruments;
 		float vitesse_test = instruments.choix_vitesse();
+		cout << endl << "--------------------------------------" << endl;
 		while (getline(monFlux, ligne)) {
 			istringstream fluxLigne(ligne);
 			string note;
@@ -16,8 +17,12 @@ void Partitions::EcoutePartition()
 			
 			// Lecture de la note et de la durée
 			monFlux >> note >> duree;
-			cout << note << endl;
 			duree *= vitesse_test * 1000;
+			if (note == "0") {
+				Sleep(duree);
+				continue;
+			}
+			cout << note << endl;
 			Sleep(duree);
 		}
 	}
