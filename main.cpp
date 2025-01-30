@@ -1,11 +1,11 @@
 #include "Instruments.hpp"
 #include "Partitions.hpp"
+#include "Affichage_Utilisateur.hpp"
 
 int main() {
-	Instruments instrument;
-	instrument.choix_activite();
-	instrument.get_active();
-	//Lis la partition
+	Affichage_utilisateur affichage_utilisateur;
+	affichage_utilisateur.choix_activite();
+	affichage_utilisateur.get_active();
 	
 	return 0;
 }

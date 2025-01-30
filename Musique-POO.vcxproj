@@ -128,11 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Affichage_Utilisateur.cpp" />
     <ClCompile Include="Instruments.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="partitions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Affichage_Utilisateur.hpp" />
     <ClInclude Include="Instruments.hpp" />
     <ClInclude Include="Partitions.hpp" />
   </ItemGroup>

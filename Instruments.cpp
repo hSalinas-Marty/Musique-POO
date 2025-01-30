@@ -1,9 +1,15 @@
 #include "Instruments.hpp"
 #include "fstream"
 #include "Partitions.hpp"
+#include "Affichage_Utilisateur.hpp"
 
 Instruments::~Instruments()
 {
+}
+
+string Instruments::get_name()
+{
+	return Nom;
 }
 
 void Instruments::choix_instrument()
@@ -28,69 +34,14 @@ void Instruments::choix_instrument()
 	}
 }
 
-void Instruments::choix_activite()
-{
-	int choix;
-	cout << "Selectionner ce que vous voulez faire : \n1 = Jouer de la mudique avec mon clavier \n2 = Ecouter de la musique" << endl;
-	cin >> choix;
-	activite = choix;
-}
-
-void Instruments::choix_partition()
-{
-	int choix = 0;
-	cout << "Quelle musique voulez-vous ecouter ? \n1 = Star Wars \n2 = Mario" << endl;
-	cin >> choix;
-	partition = choix;
-}
-
-float Instruments::choix_vitesse()
-{
-	int tempo;
-
-	cout << "Appuyez sur une touche correspondant à un rythme. \n1 = lent \n2 = normal \n3 = rapide" << endl;
-	cin >> tempo;
-
-	if (tempo == 1) {
-		vitesse = 1.5;
-		return vitesse;
-	}
-	else if (tempo == 2) {
-		vitesse = 1;
-		return vitesse;
-	}
-	else if (tempo == 3) {
-		vitesse = 0.5;
-		return vitesse;
-	}
-	else {
-		cout << "Valeur incorrecte." << endl;
-	}
-}
-
-string Instruments::get_name()
-{
-	return Nom;
-}
-
-int Instruments::get_activite()
-{
-	return activite;
-}
-
 int Instruments::get_instru()
 {
 	return instru;
 }
 
-int Instruments::get_partition()
-{
-	return partition;
-}
-
 void Instruments::ListenForKeyPress()
 {
-	cout << "Appuyez sur une touche correspondant à une note musicale (c, d, e, f, g, a, b)." << endl;
+	cout << "Appuyez sur une touche correspondant à une note musicale (s, e, d, r, f, g, y, h, u, j, i, k)." << endl;
 	cout << "Appuyez sur 'q' pour quitter." << endl;
 
 	while (true) {
@@ -144,84 +95,6 @@ void Instruments::ListenForKeyPress()
 }
 
 
-void Instruments::get_active()
-{
-	if (get_activite() == 1) {
-		choix_instrument();
-		if (get_instru() == 1) {
-			Guitare guitare;
-			guitare.ListenForKeyPress();
-		}
-		if (get_instru() == 2) {
-			Xylophone xylophone;
-			xylophone.ListenForKeyPress();
-		}
-		if (get_instru() == 3) {
-			Piano piano;
-			piano.ListenForKeyPress();
-		}
-	}
-	else {
-		choix_partition();
-		if (get_partition() == 1) {
-			choix_instrument();
-			Instruments instruments;
-			string texte;
-			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/star_wars.txt";
-			if (get_instru() == 1) {
-				//Guitare guitare;
-				//guitare.choix_vitesse();
-				Partitions partition;
-				partition.EcoutePartition(texte);
-				
-			}
-			if (get_instru() == 2) {
-				//Xylophone xylophone;
-				//xylophone.choix_vitesse();
-				Partitions partition;
-				partition.EcoutePartition(texte);
-				
-			}
-			if (get_instru() == 3) {
-				//Piano piano;
-				//piano.choix_vitesse();
-				Partitions partition;
-				partition.EcoutePartition(texte);
-				
-			}
-		}
-		else {
-			choix_instrument();
-			Instruments instruments;
-			string texte;
-			texte = "C:/Users/hugos/Documents/Ynov/POO/Musique_POO/Musique-POO/Partitions/mario.txt";
-			if (get_instru() == 1) {
-				//Guitare guitare;
-				//guitare.choix_vitesse();
-				Partitions partition;
-				partition.EcoutePartition(texte);
-			}
-			if (get_instru() == 2) {
-				//Xylophone xylophone;
-				//xylophone.choix_vitesse();
-				Partitions partition;
-				partition.EcoutePartition(texte);
-			}
-			if (get_instru() == 3) {
-				//Piano piano;
-				//piano.choix_vitesse();
-				Partitions partition;
-				partition.EcoutePartition(texte);
-				
-			}
-		}
-	}
-}
-
-float Instruments::get_vitesse()
-{
-	return vitesse;
-}
 
 
 
@@ -233,11 +106,6 @@ Guitare::Guitare()
 Guitare::~Guitare()
 {
 }
-
-void Guitare::play_guitare()
-{
-}
-
 Xylophone::Xylophone()
 {
 }

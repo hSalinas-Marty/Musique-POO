@@ -1,14 +1,15 @@
 #include "Partitions.hpp"
 #include "Instruments.hpp"
+#include "Affichage_Utilisateur.hpp"
 
 
 void Partitions::EcoutePartition(string url)
 {
-	Instruments instruments;
+	Affichage_utilisateur affichage_utilisateur;
 	ifstream monFlux(url);
 	if (monFlux) {
 		string ligne;
-		float vitesse_test = instruments.choix_vitesse();
+		float vitesse_test = affichage_utilisateur.choix_vitesse();
 		cout << endl << "--------------------------------------" << endl;
 		while (getline(monFlux, ligne)) {
 			istringstream fluxLigne(ligne);
